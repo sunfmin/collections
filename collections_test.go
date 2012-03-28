@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func ExampleStringContainsAny() {
+func ExampleStringsContainAny() {
 	fmt.Println(StringsContainAny([]string{"1", "2", "3"}, "2"))
 	//Output: true
 }
