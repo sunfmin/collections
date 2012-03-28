@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-func ExampleContains() {
+func ExampleStringContainsAny() {
 	fmt.Println(StringsContainAny([]string{"1", "2", "3"}, "2"))
 	//Output: true
 }
 
-func ExampleFilter() {
+func ExampleInt64sFilter() {
 	r := Int64sFilter([]int64{1, 2, 3, 4}, func(i int64) bool { return i%2 == 0 })
 	fmt.Println(r)
 	//Output: [2 4]
@@ -24,16 +24,12 @@ type Pig struct {
 	Name string
 }
 
-func people() []*Person {
-	return []*Person{
+func ExampleMap() {
+	source := []*Person{
 		{"Juice", true},
 		{"Felix", false},
 		{"Bin", true},
 	}
-}
-
-func ExampleMap() {
-	source := people()
 	var pigs []*Pig
 
 	m := func(p interface{}) (r interface{}, add bool) {
@@ -57,8 +53,13 @@ func ExampleMap() {
 }
 
 func ExampleFind() {
+	people := []*Person{
+		{"Juice", true},
+		{"Felix", false},
+		{"Bin", true},
+	}
 	var found *Person
-	Find(people(), func(v interface{}) bool {
+	Find(people, func(v interface{}) bool {
 		p := v.(*Person)
 		if p.Name == "Felix" {
 			return true
