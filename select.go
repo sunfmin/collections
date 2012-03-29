@@ -4,7 +4,7 @@ import (
 	"reflect"
 )
 
-func StringsFilter(cs []string, filterFunc func(e string) bool) (rs []string) {
+func StringSelect(cs []string, filterFunc func(e string) bool) (rs []string) {
 	for _, c := range cs {
 		if filterFunc(c) {
 			rs = append(rs, c)
@@ -14,7 +14,7 @@ func StringsFilter(cs []string, filterFunc func(e string) bool) (rs []string) {
 	return
 }
 
-func Int64sFilter(cs []int64, filterFunc func(e int64) bool) (rs []int64) {
+func Int64Select(cs []int64, filterFunc func(e int64) bool) (rs []int64) {
 	for _, c := range cs {
 		if filterFunc(c) {
 			rs = append(rs, c)
@@ -24,7 +24,7 @@ func Int64sFilter(cs []int64, filterFunc func(e int64) bool) (rs []int64) {
 	return
 }
 
-func Float64sFilter(cs []float64, filterFunc func(e float64) bool) (rs []float64) {
+func Float64Select(cs []float64, filterFunc func(e float64) bool) (rs []float64) {
 	for _, c := range cs {
 		if filterFunc(c) {
 			rs = append(rs, c)
@@ -34,7 +34,7 @@ func Float64sFilter(cs []float64, filterFunc func(e float64) bool) (rs []float64
 	return
 }
 
-func Map(source interface{}, mapFunc func(e interface{}) (interface{}, bool), result interface{}) {
+func Collect(source interface{}, mapFunc func(e interface{}) (interface{}, bool), result interface{}) {
 	resultVal := reflect.ValueOf(result)
 
 	if resultVal.Kind() != reflect.Ptr {

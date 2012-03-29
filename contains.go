@@ -1,6 +1,6 @@
 package collections
 
-func StringsContainAny(cs []string, es ...string) bool {
+func StringContainsAny(cs []string, es ...string) bool {
 	for _, c := range cs {
 		for _, e := range es {
 			if c == e {
@@ -12,7 +12,7 @@ func StringsContainAny(cs []string, es ...string) bool {
 	return false
 }
 
-func Int64sContainAny(cs []int64, es ...int64) bool {
+func Int64ContainsAny(cs []int64, es ...int64) bool {
 	for _, c := range cs {
 		for _, e := range es {
 			if c == e {
@@ -24,7 +24,7 @@ func Int64sContainAny(cs []int64, es ...int64) bool {
 	return false
 }
 
-func Float64sContainAny(cs []float64, es ...float64) bool {
+func Float64ContainsAny(cs []float64, es ...float64) bool {
 	for _, c := range cs {
 		for _, e := range es {
 

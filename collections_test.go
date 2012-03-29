@@ -4,13 +4,13 @@ import (
 	"fmt"
 )
 
-func ExampleStringsContainAny() {
-	fmt.Println(StringsContainAny([]string{"1", "2", "3"}, "2"))
+func ExampleStringContainsAny() {
+	fmt.Println(StringContainsAny([]string{"1", "2", "3"}, "2"))
 	//Output: true
 }
 
-func ExampleInt64sFilter() {
-	r := Int64sFilter([]int64{1, 2, 3, 4}, func(i int64) bool { return i%2 == 0 })
+func ExampleInt64Select() {
+	r := Int64Select([]int64{1, 2, 3, 4}, func(i int64) bool { return i%2 == 0 })
 	fmt.Println(r)
 	//Output: [2 4]
 }
@@ -24,7 +24,7 @@ type Pig struct {
 	Name string
 }
 
-func ExampleMap() {
+func ExampleCollect() {
 	source := []*Person{
 		{"Juice", true},
 		{"Felix", false},
@@ -42,7 +42,7 @@ func ExampleMap() {
 		return
 	}
 
-	Map(source, m, &pigs)
+	Collect(source, m, &pigs)
 
 	fmt.Println(len(pigs))
 	fmt.Println(pigs[1].Name)
