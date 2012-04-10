@@ -70,3 +70,28 @@ func ExampleFind() {
 	fmt.Println(found.Name)
 	//Output: Felix
 }
+
+func ExampleStringInGroupOf() {
+	numbers := []string{
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+	}
+	r := StringInGroupOf(numbers, 2)
+	fmt.Println(r[0])
+	fmt.Println(r[1])
+	fmt.Println(r[2])
+
+	r = StringInGroupOf(numbers, 3)
+	fmt.Println(r[0])
+	fmt.Println(r[1])
+
+	//Output:
+	//[1 2]
+	//[3 4]
+	//[5]
+	//[1 2 3]
+	//[4 5]
+}
