@@ -71,7 +71,7 @@ func ExampleFind() {
 	//Output: Felix
 }
 
-func ExampleStringInGroupOf() {
+func ExampleStringInGroupsOf() {
 	numbers := []string{
 		"1",
 		"2",
@@ -79,15 +79,14 @@ func ExampleStringInGroupOf() {
 		"4",
 		"5",
 	}
-	r := StringInGroupOf(numbers, 2)
+	r := StringInGroupsOf(numbers, 2)
 	fmt.Println(r[0])
 	fmt.Println(r[1])
 	fmt.Println(r[2])
 
-	r = StringInGroupOf(numbers, 3)
+	r = StringInGroupsOf(numbers, 3)
 	fmt.Println(r[0])
 	fmt.Println(r[1])
-
 	//Output:
 	//[1 2]
 	//[3 4]

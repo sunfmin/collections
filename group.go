@@ -1,6 +1,6 @@
 package collections
 
-func StringInGroupOf(cs []string, size int) (r [][]string) {
+func StringInGroupsOf(cs []string, size int) (r [][]string) {
 	ri := make([]string, 0)
 	for i, c := range cs {
 		if i > 0 && i%size == 0 {
