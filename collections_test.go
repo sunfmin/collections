@@ -94,3 +94,19 @@ func ExampleStringInGroupsOf() {
 	//[1 2 3]
 	//[4 5]
 }
+
+func ExampleRandomPick() {
+	source := []*Person{
+		{"Juice", true},
+		{"Felix", false},
+		{"Bin", true},
+	}
+	var rs []*Person
+	var r *Person
+	for i := 0; i < 10; i++ {
+		RandomPick(source, &r)
+		rs = append(rs, r)
+	}
+	fmt.Println(len(rs))
+	//Output: 10
+}
