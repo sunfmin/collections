@@ -110,3 +110,22 @@ func ExampleRandomPick() {
 	fmt.Println(len(rs))
 	//Output: 10
 }
+
+func ExampleIntShuffle() {
+	source := []int{1, 2, 3, 4, 5}
+	r := IntShuffle(source)
+	fmt.Println(len(r))
+	//Output: 5
+}
+
+func ExampleShuffle() {
+	source := []*Person{
+		{"Juice", true},
+		{"Felix", false},
+		{"Bin", true},
+	}
+	var rs []*Person
+	Shuffle(source, &rs)
+	fmt.Println(len(rs))
+	//Output: 3
+}
