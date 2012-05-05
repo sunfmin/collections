@@ -1,15 +1,17 @@
 package collections
 
 import (
+	"fmt"
 	"math/rand"
 	"reflect"
+	"time"
 )
 
 func RandomPick(source interface{}, result interface{}) {
 	resultVal := reflect.ValueOf(result)
 
 	if resultVal.Kind() != reflect.Ptr {
-		panic("result must be a pointer")
+		panic(fmt.Sprintf("result must be a pointer, but was %v", resultVal.Kind()))
 	}
 	resultVal = resultVal.Elem()
 
@@ -48,6 +50,8 @@ func Shuffle(source interface{}, result interface{}) {
 }
 
 func IntShuffle(source []int) (result []int) {
+	rand.Seed(time.Now().UnixNano())
+
 	shinks := source
 
 	for {
